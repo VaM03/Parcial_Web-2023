@@ -1,0 +1,95 @@
+@use "../utils/" as u;
+
+#what-can-you-see{
+    background-image: url(../images/main-pattern.png);
+    width: 100%;
+    height: auto;
+    color: u.$text-color;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    h3{
+        font-family: u.$title-font;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .cards-container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+        article {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 30rem;
+            gap: 1.5rem;
+            align-items: center;
+            figure{
+                img{
+                    width: 70px;
+                }
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 0.5rem;
+                padding: 0.5rem;
+                h4{
+                    text-align: center;
+                    font-family: u.$title-font;
+                    font-size: 1.5rem;
+                }
+                p{
+                    text-align: justify;
+                    font-family: u.$item-font;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .info:hover{
+                background-color: u.$text-color;
+                color: black;
+            }
+            
+            @media (max-width: u.$device-tablet) {
+                display: flex;
+                flex-direction: column;
+                flex-basis: calc(50% - 20px);
+            }
+            
+            @media (max-width: u.$device-phone) {
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 100%;
+            }
+        }
+        article:nth-child(n+4) {
+            display: flex;
+            flex-direction: row-reverse; //ChatGPT
+            @media (max-width: u.$device-tablet) {
+                display: flex;
+                flex-direction: column;
+                flex-basis: calc(50% - 20px);
+            }
+            @media (max-width: u.$device-phone) {
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 100%;
+            }
+        }
+        article:hover{
+            border-left: 2px solid u.$text-color; /* Línea izquierda de 2px de ancho y color azul */
+            border-right: 2px solid u.$text-color;/* Línea derecha de 2px de ancho y color azul */
+            padding: 5px;
+        }
+    }
+}

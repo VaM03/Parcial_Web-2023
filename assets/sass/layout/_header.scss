@@ -1,0 +1,116 @@
+@use '../utils/theme' as v;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+
+    width: 100%;
+    height: auto;
+    padding: 1.6vh 5vw;
+    background-image:url(../images/bg-pattern.png);
+
+    .main-bar{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    
+
+    h1{
+        font-family: v.$logo-font;
+        font-size: 3rem;
+        color: v.$text-color;
+    }
+
+}
+
+nav{
+    
+    ul{
+
+        margin: 1rem 0;
+
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+
+        
+    }
+    
+
+    .active{
+        color: v.$light-backdrop-color;
+    }
+
+    a{
+
+        font-size: 1rem;
+        font-family: v.$item-font;
+        color: v.$text-color;
+        text-decoration: none;
+
+        margin-left: 2vw;
+        margin-right: 2vw;
+
+        width: 92vw;
+        
+    }
+
+    
+}
+
+.abstract{
+
+    h2{
+        font-family: v.$text-font;
+        font-size: 1rem;
+        color: v.$text-color;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    h3{
+        font-family: v.$item-font;
+        font-size: 3rem;
+        color: v.$text-color;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .btn-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1rem;
+        gap: 1rem;
+
+
+        button{
+            background-color:v.$light-backdrop-color;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1.6vh 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+    }
+
+    nav {
+        font-size: 1rem;
+    }
+}
